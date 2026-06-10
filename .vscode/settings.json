@@ -67,6 +67,6 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "U13.slnx",
+    "dotnet.defaultSolution": "Unity_U13.slnx",
     "dotnet.enableWorkspaceBasedDevelopment": false
 }
