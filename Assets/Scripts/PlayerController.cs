@@ -17,7 +17,7 @@ public class playerController : MonoBehaviour
     InputAction look,jump,move;
     Rigidbody rb;
     // private float sensitivity=1f;
-    private float dist=20f;
+    private float dist=8f;
     private float jumpforce=6f;
     private int jumpCount = 0;
     public int maxJump = 1;

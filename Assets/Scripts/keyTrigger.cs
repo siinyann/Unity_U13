@@ -18,9 +18,9 @@ public class keyTrigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.CompareTag("Key"))
+        if (collision.gameObject.CompareTag("Key") || collision.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadScene("");
+            SceneManager.LoadScene("Menu");
         }
     }
 
