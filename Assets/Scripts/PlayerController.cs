@@ -17,10 +17,10 @@ public class playerController : MonoBehaviour
     InputAction look,jump,move;
     Rigidbody rb;
     // private float sensitivity=1f;
-    public float dist=8f;
+    public float dist=10f;
     private float jumpforce=3f;
     private int jumpCount = 0;
-    public int maxJump = 2;
+    public int maxJump = 1;
     // bool touchGround = false;
     public static event Action playerDie;
 
@@ -51,24 +51,19 @@ public class playerController : MonoBehaviour
     {
         Vector2 moveValue = move.ReadValue<Vector2>();
 //  && (jumpCount<maxJump
-        if (jump.WasPressedThisFrame() && jumpCount<maxJump) 
+        if (jump.WasPressedThisFrame()) 
         {
             rb.AddForce(Vector3.up*jumpforce,ForceMode.Impulse);
             jumpCount++;
         } 
-        if (jump.WasPressedThisFrame()){Debug.Log(jumpCount);}
 
         Vector3 motion = new Vector3(moveValue.x,0,moveValue.y);
-        if (motion.magnitude > 1) motion.Normalize();
+        if (motion.magnitude > 1) motion=motion.normalized;
         transform.Translate(motion*Time.deltaTime*dist);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            jumpCount=0;
-        }
         if (collision.gameObject.CompareTag("Water"))
         {
             Debug.Log("player_died");
@@ -94,4 +89,14 @@ public class playerController : MonoBehaviour
         if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {Cursor.lockState=CursorLockMode.None;}
     }
+
+    public static void PlayerDie()
+    {
+        playerDie?.Invoke();
+    }
 }
+// add to the fall reset
+    // void OnEnable()
+    // {
+    //     playerController.playerDie += RestartGame();
+    // }
