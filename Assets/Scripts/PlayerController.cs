@@ -17,8 +17,8 @@ public class playerController : MonoBehaviour
     InputAction look,jump,move;
     Rigidbody rb;
     // private float sensitivity=1f;
-    private float dist=20f;
-    private float jumpforce=6f;
+    public float dist=10f;
+    private float jumpforce=3f;
     private int jumpCount = 0;
     public int maxJump = 2;
     // bool touchGround = false;
@@ -59,7 +59,7 @@ public class playerController : MonoBehaviour
         if (jump.WasPressedThisFrame()){Debug.Log(jumpCount);}
 
         Vector3 motion = new Vector3(moveValue.x,0,moveValue.y);
-        if (motion.magnitude > 1) motion=motion.normalized;
+        if (motion.magnitude > 1) motion.Normalize();
         transform.Translate(motion*Time.deltaTime*dist);
     }
 
