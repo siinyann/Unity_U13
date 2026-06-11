@@ -9,10 +9,12 @@ Assets Used
 Instructions
 
 1) Clone the repository using Github Desktop by referring to this tutorial.
+   
    https://docs.github.com/en/desktop/adding-and-cloning-repositories/cloning-a-repository-from-github-to-github-desktop
+   
    https://desktop.github.com/download/
 
-2) Once you clone the repo, right-click reveal in Finder for Mac or show in file explorer for Windows
+3) Once you clone the repo, right-click reveal in Finder for Mac or show in file explorer for Windows
 
 <img width="1280" height="719" alt="Screenshot 2026-06-11 at 03 51 27" src="https://github.com/user-attachments/assets/5b12b91b-e656-491c-8b31-ba3fde9ef81f" />
 
