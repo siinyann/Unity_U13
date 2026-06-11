@@ -381,7 +381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac8ccfc1096644f40afdec87dc99a0b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  frameToToggle: {fileID: 0}
+  frameToToggle: {fileID: 1022229338}
 --- !u!1 &535977098
 GameObject:
   m_ObjectHideFlags: 0
